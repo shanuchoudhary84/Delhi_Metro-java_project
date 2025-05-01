@@ -1,23 +1,114 @@
-# DELHI METRO RAIL APP
+# Delhi Metro Navigator
 
+A Java application that helps users navigate the Delhi Metro transit system using graph algorithms to find optimal routes.
 
-This is a simple Java program that will take information (name) of the source station and the destination station, of Delhi Metro, from the user and display the fare and shortest metro route to reach the destination. It will also be having a metro map for commuter’s better navigation.
+## 📝 Description
 
-The idea is implemented using Graph and Heap data structures.
-The graph has nodes and edges. Nodes represent a metro station that will be containing certain information regarding that station like its name, its metro corridor, and the lines which it connects. Edges (the connection between two nodes) represent the distance between the two stations and the cost of each edge will be equal to the distance between the two of its connecting stations(nodes). 
+Delhi Metro Navigator is a console-based application that allows users to:
+- View all stations in the Delhi Metro network
+- Display the complete metro map 
+- Find the shortest distance between stations
+- Calculate the quickest travel time between stations
+- Get detailed path information including interchanges
 
-By using different algorithms like Dijkstra, breadth-first search, depth-first search, etc, the shortest path between the source station and the destination station is determined, and accordingly, the fare is being calculated on the basis of the total distance between the two stations. Finally, the metro route between the two stations and the total fare is displayed.
+The application uses graph data structures and algorithms (Dijkstra's algorithm) to calculate optimal routes between stations, considering both distance and time factors.
 
-Main.java cointains all the major code and Heap.java contains heap implementation.
+## 🚇 Features
 
+- **Station Listing:** View all available stations in the Delhi Metro network
+- **Metro Map Visualization:** Display a text-based representation of the complete metro network
+- **Multiple Input Methods:** Find stations by:
+  - Serial number
+  - Station code
+  - Station name
+- **Distance Optimization:** Calculate shortest distance routes between stations
+- **Time Optimization:** Calculate fastest time routes between stations
+- **Path Details:** Get comprehensive path information including:
+  - Total distance
+  - Total travel time
+  - Number of interchanges required
+  - Detailed station-by-station path
 
-##  REQUIREMENTS
+## 🧠 Algorithms & Data Structures
 
-> The project can run on any online or offline Integrated Development Environment (IDE) like Eclipse, Netbeans, ideone.com, etc.
-> You should have at least elementary knowledge of Java Programming language to work on the project.
-> Knowledge of data structures like Graph and Heap and Algorithms like Dijkstra, BFS, DFS, etc is appreciated, however, it is not essential.
-> And lastly, some understanding of the Collection framework makes it a cakewalk journey. (If you don't know about the Collection framework it is not a                   problem, you can proceed without it and while working if you feel the need to know you can refer to https://www.geeksforgeeks.org/collections-in-java-2/ ).
+- **Graph Implementation:** Custom adjacency list representation using HashMap
+- **Shortest Path:** Dijkstra's algorithm for optimal route calculation
+- **Priority Queue:** Custom heap implementation for efficient path finding
+- **Path Reconstruction:** Custom tracking of paths for detailed route information
 
+## 🔍 Technical Implementation
 
-## That was all... You are all set to work on the project!!!!  
-	
+The project consists of two main Java classes:
+1. **Graph_M.java:** Contains the graph implementation, metro map creation, and all path finding algorithms
+2. **Heap.java:** Implements a custom priority queue used by Dijkstra's algorithm
+
+Key components include:
+- Vertex representation with adjacency lists
+- Edge representation with distance weights
+- Line color tracking through station naming convention (using ~color suffix)
+- Custom comparison logic for optimal path finding
+
+## 🚀 Usage
+
+1. Compile the Java files:
+```
+javac Graph_M.java Heap.java
+```
+
+2. Run the application:
+```
+java Graph_M
+```
+
+3. Follow the on-screen menu to:
+   - List all stations
+   - View the metro map
+   - Find shortest paths by distance
+   - Find shortest paths by time
+   - Get detailed routing information
+
+## 🗺️ Metro Line Information
+
+The application includes information for the following Delhi Metro lines:
+- Blue Line (B)
+- Yellow Line (Y)
+- Orange Line (O)
+- Pink Line (P)
+- Red Line (R)
+
+Interchange stations are marked with multiple line identifiers (e.g., BY for Blue-Yellow interchange).
+
+## 📊 Example
+
+```
+SOURCE STATION : Noida Sector 62~B
+DESTINATION STATION : IGI Airport~O
+DISTANCE : 28KM
+NUMBER OF INTERCHANGES : 1
+~~~~~~~~~~~~~
+START  ==>  Noida Sector 62~B
+Botanical Garden~B
+Yamuna Bank~B
+Rajiv Chowk~BY
+New Delhi~YO
+Shivaji Stadium~O
+DDS Campus~O
+IGI Airport~O   ==>    END
+~~~~~~~~~~~~~
+```
+
+## 🛠️ Future Improvements
+
+- Add a graphical user interface
+- Include fare calculation
+- Update with the latest Delhi Metro expansions
+- Add real-time data integration
+- Implement mobile applications
+
+## 📄 License
+
+This project is open-source and available under the MIT License.
+
+---
+
+Created by [Shanu Choudhary]
